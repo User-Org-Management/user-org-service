@@ -56,26 +56,23 @@ public class OrganizationService {
 
 	public OrganizationDTO updateOrganization(Long id, OrganizationDTO dto) {
 		logger.info("Updating organization with ID: {}", id);
-		OrganizationEntity organization = organizationRepository.findById(id)
-				.orElseThrow(() -> new EntityNotFoundException(ORG_NOT_FOUND));
+		OrganizationEntity organization = organizationMapper.toEntity(getOrganizationById(id));
 
 		if (!organization.getName().equals(dto.getName()) &&
-				organizationRepository.existsByName(dto.getName())) {
+			organizationRepository.existsByName(dto.getName())) {
 			logger.warn("Organization name already exists: {}", dto.getName());
 			throw new IllegalArgumentException(ORG_NAME_EXISTS);
 		}
 		organization.setName(dto.getName());
-		organization = organizationRepository.save(organization);
-		logger.info("Organization updated with ID: {}", organization.getId());
-		return organizationMapper.toDTO(organization);
+	    OrganizationEntity	organizationSaved = organizationRepository.save(organization);
+		logger.info("Organization updated with ID: {}", organizationSaved.getId());
+		return organizationMapper.toDTO(organizationSaved);
 	}
 
 	@Transactional
 	public void deleteOrganization(Long id) {
 		logger.info("Deleting organization with ID: {}", id);
-		OrganizationEntity organization = organizationRepository.findById(id)
-				.orElseThrow(() -> new EntityNotFoundException(String.format(ORG_WITH_ID_NOT_FOUND, id)));
-
+		OrganizationEntity organization = organizationMapper.toEntity(getOrganizationById(id));
 		List<UserEntity> users = userRepository.findByOrganizationId(id);
 		if (!users.isEmpty()) {
 			logger.info("Deleting {} users assigned to organization ID: {}", users.size(), id);

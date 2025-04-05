@@ -29,17 +29,13 @@ public class UserController {
 
 	@RequestMapping(value = "/{id}" , method = RequestMethod.GET)
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
-        return userService.getUserById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        return ResponseEntity.ok(userService.getUserById(id));
     }
 
 
 	@RequestMapping(value = "/email" , method = RequestMethod.GET)
 	public ResponseEntity<UserDTO> getUserByEmail(@RequestParam String email) {
-		return userService.getUserByEmail(email)
-				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());
+		return ResponseEntity.ok(userService.getUserByEmail(email));
 	}
 
 	@RequestMapping(value = "/update/{id}" , method = RequestMethod.PUT)

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.user_organization_management.entity.OrganizationEntity;
 import com.user_organization_management.entity.UserEntity;
+import com.user_organization_management.mapper.OrganizationMapper;
 import com.user_organization_management.mapper.UserMapper;
 import com.user_organization_management.model.CustomPageResponse;
 import com.user_organization_management.specification.UserSpecification;
@@ -17,16 +18,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.user_organization_management.dto.UserDTO;
 import com.user_organization_management.exception.EntityNotFoundException;
-import com.user_organization_management.repository.OrganizationRepository;
 import com.user_organization_management.repository.UserRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import static com.user_organization_management.util.Constants.*;
+
 
 @Service
 public class UserService {
@@ -38,7 +37,10 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	@Autowired 
-	private OrganizationRepository organizationRepository;
+	private OrganizationService organizationService;
+
+	@Autowired
+	private OrganizationMapper organizationMapper;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -62,10 +64,10 @@ public class UserService {
 				.build();
 	}
 
-	public Optional<UserDTO> getUserById(Long id) {
-        return Optional.ofNullable(userRepository.findById(id)
+	public UserDTO getUserById(Long id) {
+        return userRepository.findById(id)
                 .map(userMapper::toDTO)
-                .orElseThrow(() -> new EntityNotFoundException("User with id " + id + " not found")));
+                .orElseThrow(() -> new EntityNotFoundException(USER_NOT_FOUND));
 	}
 
 	@Transactional
@@ -75,12 +77,7 @@ public class UserService {
 		UserEntity user = userMapper.toEntity(userDto);
 
 		if (userDto.getOrganizationId() != null) {
-			OrganizationEntity organization = organizationRepository.findById(userDto.getOrganizationId())
-					.orElseThrow(() -> {
-						String errorMsg = "Organization not found with ID: " + userDto.getOrganizationId();
-						logger.error(errorMsg);
-						return new EntityNotFoundException(errorMsg);
-					});
+			OrganizationEntity organization = getOrganizationById(userDto.getOrganizationId());
 			user.setOrganization(organization);
 			logger.info("User {} is being assigned to organization with ID: {}", userDto.getEmail(), userDto.getOrganizationId());
 		} else {
@@ -89,7 +86,7 @@ public class UserService {
 		}
 		if (userDto.getPassword() == null || userDto.getPassword().isEmpty()) {
 			logger.error("Password cannot be empty for user {}", userDto.getEmail());
-			throw new IllegalArgumentException("Password cannot be empty");
+			throw new IllegalArgumentException(PASSWORD_CAN_NOT_BE_EMPTY);
 		}
 		String encodedPassword = passwordEncoder.encode(userDto.getPassword());
 		user.setPassword(encodedPassword);
@@ -102,8 +99,7 @@ public class UserService {
 	}
 
 	public UserDTO updateUser(Long userId, UserDTO userDTO) {
-		UserEntity existingUser = userRepository.findById(userId)
-				.orElseThrow(() -> new EntityNotFoundException("User not found"));
+		UserEntity existingUser = userMapper.toEntity(getUserById(userId));
 		checkUserEmailExist(userDTO.getEmail(), userId);
 		existingUser.setName(userDTO.getName());
 		existingUser.setEmail(userDTO.getEmail());
@@ -119,8 +115,7 @@ public class UserService {
 
 
 	public UserDTO assignUserToOrganization(Long userId, Long orgId) {
-		UserEntity user = userRepository.findById(userId)
-				.orElseThrow(() -> new EntityNotFoundException("User not found")) ;
+		UserEntity user = userMapper.toEntity(getUserById(userId));
 		OrganizationEntity organization = getOrganizationById(orgId);
 		user.setOrganization(organization);
 		return userMapper.toDTO(userRepository.save(user));
@@ -128,40 +123,34 @@ public class UserService {
 	
 	public UserDTO unassignUserFromOrganization(Long userId) {
 		logger.info("un assign user: {}", userId);
-		UserEntity user = userRepository.findById(userId)
-	            .orElseThrow(() -> new EntityNotFoundException("User not found"));
+		UserEntity user = userMapper.toEntity(getUserById(userId));
 	    user.setOrganization(null);
 		logger.info("user after un assign : {}", user);
-
 		return userMapper.toDTO(userRepository.save(user));
 	}
 	
 	public void deleteUser(Long id) {
 		logger.info("check User with id :{}", id);
-		UserEntity user = userRepository.findById(id).orElseThrow(() ->
-		new EntityNotFoundException("User with id " + id + " not found"));	
-		
+		UserEntity user = userMapper.toEntity(getUserById(id));
 		logger.info("user  deleted: {}", user);
 	    userRepository.deleteById(user.getId());
-	    //(search) not delete direct
 	}
 
-	public Optional<UserDTO> getUserByEmail(String email){
-		return Optional.of(userRepository.
+	public UserDTO getUserByEmail(String email){
+		return userRepository.
 				findByEmail(email).map(userMapper::toDTO)
-				.orElseThrow(() -> new  EntityNotFoundException("User with email " + email + " not found")));
+				.orElseThrow(() -> new  EntityNotFoundException(String.format(USER_WITH_EMAIL_NOT_FOUND, email)));
 	}
 
 
 	public void checkUserEmailExist(String email, Long userId){
-		Optional<UserEntity> existingUser = userRepository.findByEmail(email);
-		if (existingUser.isPresent() && !existingUser.get().getId().equals(userId)) {
+		UserEntity existingUser = userMapper.toEntity(getUserByEmail(email));
+		if (!existingUser.getId().equals(userId)) {
 			logger.warn("Email {} already exists.", email);
-			throw new IllegalArgumentException("Email already exists!");
+			throw new IllegalArgumentException(USER_EMAIL_EXISTS);
 		}
 	}
 	public OrganizationEntity getOrganizationById(Long orgId){
-        return organizationRepository.findById(orgId)
-				.orElseThrow(() -> new EntityNotFoundException("Organization not found"));
+        return organizationMapper.toEntity(organizationService.getOrganizationById(orgId));
 	}
 }

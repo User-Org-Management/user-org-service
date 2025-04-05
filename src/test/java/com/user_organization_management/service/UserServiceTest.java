@@ -85,19 +85,17 @@ class UserServiceTest {
     @Test
     void getUserById_WhenUserExists_ShouldReturnUser(){
         when(userRepository.findById(1L)).thenReturn(Optional.of(userEntity));
-        Optional<UserDTO> result = userService.getUserById(1L);
+        UserDTO result = userService.getUserById(1L);
         assertNotNull(result);
-        assertTrue(result.isPresent());
-        assertEquals("Test User", result.get().getName());
+        assertEquals("Test User", result.getName());
 
     }
 
     @Test
     void getUserByEmail_WhenUserExists_ShouldReturnUser() {
         when(userRepository.findByEmail("test@example.com")).thenReturn(Optional.of(userEntity));
-        Optional<UserDTO>  result = userService.getUserByEmail("test@example.com");
-        assertTrue(result.isPresent());
-        assertEquals("test@example.com", result.get().getEmail());
+        UserDTO  result = userService.getUserByEmail("test@example.com");
+        assertEquals("test@example.com", result.getEmail());
     }
 
     @Test
