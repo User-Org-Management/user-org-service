@@ -8,8 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface OrganizationRepository extends JpaRepository<OrganizationEntity, Long> {
     boolean existsByName(String name);
     String findByName(String name);
-
-//    @Modifying
-//    @Query("DELETE FROM UserEntity u WHERE u.organization.id = :orgId")
-//    void deleteByOrganizationId(@Param("orgId") Long orgId);
 }

@@ -16,6 +16,6 @@ public interface UserMapper {
     UserDTO toDTO(UserEntity user);
 
     @Mapping(source = "organizationId", target = "organization.id")
-    @Mapping(target = "organization.name", ignore = true) // Avoid overriding name
+    @Mapping(target = "organization.name", ignore = true)
     UserEntity toEntity(UserDTO userDTO);
 }

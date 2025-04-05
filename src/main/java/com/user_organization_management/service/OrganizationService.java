@@ -3,6 +3,8 @@ package com.user_organization_management.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.user_organization_management.mapper.OrganizationMapper;
+import com.user_organization_management.mapper.UserMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,28 +26,26 @@ public class OrganizationService {
 	@Autowired
 	private UserRepository userRepository;
 
+	private final OrganizationMapper organizationMapper = OrganizationMapper.INSTANCE;
+
 	private static final Logger logger = LoggerFactory.getLogger(OrganizationService.class);
 
 	public List<OrganizationDTO> getAllOrganizations() {
-	        return organizationRepository.findAll()
-	                .stream()
-	                .map(org -> new OrganizationDTO(org.getId(), org.getName()))
-	                .toList();
+	        return organizationRepository.findAll().stream().map(organizationMapper::toDTO).toList();
 	 }
 	 public Optional<OrganizationDTO> getOrganizationById(Long id) {
-		 	return organizationRepository.findById(id)
-                .map(org -> new OrganizationDTO(org.getId(), org.getName()));
+		 	return organizationRepository.findById(id).map(organizationMapper::toDTO);
 	 }
 
 
-	public OrganizationDTO createOrganization(OrganizationDTO dto) {
-		if (organizationRepository.existsByName(dto.getName())) {
-			throw new IllegalArgumentException("Organization name already exists!");
-		}
-		OrganizationEntity organization = new OrganizationEntity(dto.getName());
-		organization = organizationRepository.save(organization);
-		return new OrganizationDTO(organization.getId(), organization.getName());
+	public OrganizationDTO createOrganization(OrganizationDTO body) {
+		validateOrganizationNameUniqueness(body.getName());
+		OrganizationEntity entity = organizationMapper.toEntity(body);
+		OrganizationEntity savedEntity = organizationRepository.save(entity);
+		return organizationMapper.toDTO(savedEntity);
 	}
+
+
 
 	public OrganizationDTO updateOrganization(Long id, OrganizationDTO dto) {
 		OrganizationEntity organization = organizationRepository.findById(id)
@@ -68,4 +68,13 @@ public class OrganizationService {
 		}
 		organizationRepository.delete(organization);
 	}
+
+	private void validateOrganizationNameUniqueness(String name) {
+		if (organizationRepository.existsByName(name)) {
+			throw new IllegalArgumentException("Organization name already exists!");
+		}
+	}
+
+
+
 }
