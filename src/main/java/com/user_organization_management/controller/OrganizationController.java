@@ -27,8 +27,7 @@ public class OrganizationController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<OrganizationDTO> getOrganizationById(@PathVariable Long id) {
-		 return organizationService.getOrganizationById(id)
-				 .map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+		 return ResponseEntity.ok(organizationService.getOrganizationById(id));
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
