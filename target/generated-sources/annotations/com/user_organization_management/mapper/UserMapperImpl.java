@@ -7,8 +7,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-05T23:44:32+0200",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
+    date = "2025-04-08T20:14:16+0200",
+    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
 )
 public class UserMapperImpl implements UserMapper {
 
@@ -22,10 +22,11 @@ public class UserMapperImpl implements UserMapper {
 
         userDTO.setOrganizationId( userOrganizationId( user ) );
         userDTO.setOrganizationName( userOrganizationName( user ) );
-        userDTO.setId( user.getId() );
-        userDTO.setName( user.getName() );
         userDTO.setEmail( user.getEmail() );
+        userDTO.setId( user.getId() );
         userDTO.setMobile( user.getMobile() );
+        userDTO.setName( user.getName() );
+        userDTO.setPassword( user.getPassword() );
 
         return userDTO;
     }
@@ -40,9 +41,9 @@ public class UserMapperImpl implements UserMapper {
 
         userEntity.setOrganization( userDTOToOrganizationEntity( userDTO ) );
         userEntity.setId( userDTO.getId() );
-        userEntity.setName( userDTO.getName() );
         userEntity.setEmail( userDTO.getEmail() );
         userEntity.setMobile( userDTO.getMobile() );
+        userEntity.setName( userDTO.getName() );
         userEntity.setPassword( userDTO.getPassword() );
 
         return userEntity;

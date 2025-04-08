@@ -12,7 +12,7 @@ public interface UserMapper {
 
     @Mapping(source = "organization.id", target = "organizationId")
     @Mapping(source = "organization.name", target = "organizationName")
-    @Mapping(target = "password", ignore = true)
+//    @Mapping(target = "password", ignore = true)
     UserDTO toDTO(UserEntity user);
 
     @Mapping(source = "organizationId", target = "organization.id")

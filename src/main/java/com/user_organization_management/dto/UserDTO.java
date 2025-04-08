@@ -17,6 +17,7 @@ import lombok.Setter;
 public class UserDTO {
     private Long id;
     @NotBlank(message = "name is required")
+    @Column(unique = true, nullable = false)
     private String name;
     @Email(message = "Invalid Email Format")
     @NotBlank(message = "Email is required")

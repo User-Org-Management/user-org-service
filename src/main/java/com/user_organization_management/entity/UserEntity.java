@@ -1,5 +1,6 @@
 package com.user_organization_management.entity;
 
+import com.user_organization_management.utils.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -16,11 +17,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
-public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class UserEntity extends BaseEntity<Long> {
     @NotBlank(message = "name is required")
+    @Column(unique = true, nullable = false)
     private String name;
     @Email(message = "Invalid Email Format")
     @NotBlank(message = "email is required")
@@ -31,7 +30,6 @@ public class UserEntity {
     @ManyToOne
     @JoinColumn(name = "organization_id", nullable = true)
     private OrganizationEntity organization;
-    @NotBlank(message = "password is required")
     private String password;
 
 }

@@ -38,15 +38,15 @@ public class UserController {
 		return ResponseEntity.ok(userService.getUserByEmail(email));
 	}
 
-	@RequestMapping(value = "/update/{id}" , method = RequestMethod.PUT)
-	public ResponseEntity<UserDTO> updateOrganization(@PathVariable @Min(1) Long  id , @Valid @RequestBody UserDTO userDTO) {
-		return ResponseEntity.ok(userService.updateUser(id , userDTO));
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<UserDTO> updateUser(@PathVariable @Min(1) Long id, @RequestBody @Valid UserDTO userDTO) {
+		return ResponseEntity.ok(userService.updateUser(id, userDTO));
 	}
 
-	@RequestMapping(value = "/{userId}/assign/{orgId}" , method = RequestMethod.PUT)
+	@RequestMapping(value = "/{userId}/assign/{orgId}", method = RequestMethod.PUT)
 	public ResponseEntity<UserDTO> assignUserToOrganization(@PathVariable Long userId, @PathVariable Long orgId) {
-        return ResponseEntity.ok(userService.assignUserToOrganization(userId, orgId));
-    }
+		return ResponseEntity.ok(userService.assignUserToOrganization(userId, orgId));
+	}
 	
 	@RequestMapping(value = "/un-assign/{userId}" , method = RequestMethod.PUT)
 	public ResponseEntity<UserDTO> unAssignUserFromOrganization(@PathVariable Long userId) {

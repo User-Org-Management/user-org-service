@@ -21,8 +21,8 @@ public class OrganizationController {
 	private OrganizationService organizationService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<List<OrganizationDTO>> getAllOrganizations() {
-		return ResponseEntity.ok(organizationService.getAllOrganizations());
+	public ResponseEntity<List<OrganizationDTO>> getAllOrganizations(@RequestParam(required = false) String name) {
+		return ResponseEntity.ok(organizationService.getAllOrganizations(name));
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -31,12 +31,12 @@ public class OrganizationController {
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public ResponseEntity<OrganizationDTO> createOrganization(@Valid @RequestBody OrganizationDTO organizationDTO) {
+	public ResponseEntity<OrganizationDTO> createOrganization(@RequestBody @Valid  OrganizationDTO organizationDTO) {
 		return ResponseEntity.ok(organizationService.createOrganization(organizationDTO));
 	}
 
 	@RequestMapping(value = "/update/{id}" , method = RequestMethod.PUT)
-	public ResponseEntity<OrganizationDTO> updateOrganization(@PathVariable @Min(1) Long  id , @Valid @RequestBody OrganizationDTO organizationDTO) {
+	public ResponseEntity<OrganizationDTO> updateOrganization(@PathVariable @Min(1) Long  id, @RequestBody @Valid  OrganizationDTO organizationDTO) {
 		return ResponseEntity.ok(organizationService.updateOrganization(id , organizationDTO));
 	}
 

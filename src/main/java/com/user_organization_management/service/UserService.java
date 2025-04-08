@@ -3,6 +3,7 @@ package com.user_organization_management.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.user_organization_management.dto.OrganizationDTO;
 import com.user_organization_management.entity.OrganizationEntity;
 import com.user_organization_management.entity.UserEntity;
 import com.user_organization_management.mapper.OrganizationMapper;
@@ -24,19 +25,16 @@ import org.springframework.stereotype.Service;
 import com.user_organization_management.dto.UserDTO;
 import com.user_organization_management.exception.EntityNotFoundException;
 import com.user_organization_management.repository.UserRepository;
-import static com.user_organization_management.util.Constants.*;
-
+import static com.user_organization_management.utils.Constants.*;
 
 @Service
 public class UserService {
-	
-    private static final Logger logger = LoggerFactory.getLogger(UserService.class); 
+	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-	
 	@Autowired
 	private UserRepository userRepository;
-	
-	@Autowired 
+
+	@Autowired
 	private OrganizationService organizationService;
 
 	@Autowired
@@ -47,12 +45,12 @@ public class UserService {
 
 	private final UserMapper userMapper = UserMapper.INSTANCE;
 
-
 	public CustomPageResponse<UserDTO> getUsersByFilterWithPagination(String email, String mobile, int page, int size) {
 		Pageable pageable = PageRequest.of(page, size, Sort.by("id").ascending());
 		Specification<UserEntity> spec = UserSpecification.filterByEmailAndMobile(email, mobile);
 		Page<UserEntity> userPage = userRepository.findAll(spec, pageable);
 		List<UserDTO> users = userPage.getContent().stream().map(userMapper::toDTO).toList();
+
 		return CustomPageResponse.<UserDTO>builder()
 				.content(users)
 				.currentPage(userPage.getNumber())
@@ -65,92 +63,140 @@ public class UserService {
 	}
 
 	public UserDTO getUserById(Long id) {
-        return userRepository.findById(id)
-                .map(userMapper::toDTO)
-                .orElseThrow(() -> new EntityNotFoundException(USER_NOT_FOUND));
+		return userRepository.findById(id)
+				.map(userMapper::toDTO)
+				.orElseThrow(() -> new EntityNotFoundException(USER_NOT_FOUND));
 	}
 
 	@Transactional
 	public UserDTO createUser(UserDTO userDto) {
-		logger.info("create a new user with email: {}", userDto.getEmail());
+		logger.info(USER_CREATION, userDto.getEmail());
 		checkUserEmailExist(userDto.getEmail(), userDto.getId());
+		checkUserNameExist(userDto, userDto.getId());
 		UserEntity user = userMapper.toEntity(userDto);
-
 		if (userDto.getOrganizationId() != null) {
 			OrganizationEntity organization = getOrganizationById(userDto.getOrganizationId());
+
 			user.setOrganization(organization);
-			logger.info("User {} is being assigned to organization with ID: {}", userDto.getEmail(), userDto.getOrganizationId());
+
+			logger.info(USER_ASSIGNED_TO_ORG, userDto.getEmail(), userDto.getOrganizationId());
 		} else {
 			user.setOrganization(null);
-			logger.info("User {} is not assigned to any organization.", userDto.getEmail());
-		}
-		if (userDto.getPassword() == null || userDto.getPassword().isEmpty()) {
-			logger.error("Password cannot be empty for user {}", userDto.getEmail());
-			throw new IllegalArgumentException(PASSWORD_CAN_NOT_BE_EMPTY);
+			logger.info(USER_NOT_ASSIGNED_TO_ORG, userDto.getEmail());
 		}
 		String encodedPassword = passwordEncoder.encode(userDto.getPassword());
 		user.setPassword(encodedPassword);
-		logger.info("Password for user {} has been encoded successfully.", userDto.getEmail());
+		logger.info(PASSWORD_ENCODED, userDto.getEmail());
 
 		UserDTO savedUserDto = userMapper.toDTO(userRepository.save(user));
-		logger.info("User {} has been successfully created with ID: {}", savedUserDto.getEmail(), savedUserDto.getId());
-
+		logger.info(USER_CREATED, savedUserDto.getEmail(), savedUserDto.getId());
 		return savedUserDto;
 	}
 
 	public UserDTO updateUser(Long userId, UserDTO userDTO) {
-		UserEntity existingUser = userMapper.toEntity(getUserById(userId));
+		logger.info(USER_UPDATING, userId);
+		UserEntity existingUser = userRepository.findById(userId)
+				.orElseThrow(() -> new EntityNotFoundException(USER_NOT_FOUND));
+
 		checkUserEmailExist(userDTO.getEmail(), userId);
+		checkUserNameExist(userDTO, userId);
+
 		existingUser.setName(userDTO.getName());
 		existingUser.setEmail(userDTO.getEmail());
 		existingUser.setMobile(userDTO.getMobile());
+
 		if (userDTO.getOrganizationId() != null) {
 			OrganizationEntity organization = getOrganizationById(userDTO.getOrganizationId());
 			existingUser.setOrganization(organization);
+			logger.info(USER_ASSIGNED_TO_ORG_UPDATE, userDTO.getEmail(), userDTO.getOrganizationId());
+		} else {
+			existingUser.setOrganization(null);
+			logger.info(USER_UNASSIGNED_FROM_ORG_UPDATE, userDTO.getEmail());
 		}
+
+		if (userDTO.getPassword() != null && !userDTO.getPassword().trim().isEmpty()) {
+			String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
+			existingUser.setPassword(encodedPassword);
+			logger.info(PASSWORD_UPDATED, userDTO.getEmail());
+		}
+
 		UserEntity updatedUser = userRepository.save(existingUser);
+		logger.info(USER_UPDATED, updatedUser.getEmail());
+
 		return userMapper.toDTO(updatedUser);
 	}
 
-
-
+	@Transactional
 	public UserDTO assignUserToOrganization(Long userId, Long orgId) {
 		UserEntity user = userMapper.toEntity(getUserById(userId));
-		OrganizationEntity organization = getOrganizationById(orgId);
-		user.setOrganization(organization);
+		OrganizationEntity org = getOrganizationById(orgId);
+		user.setOrganization(org);
+		logger.info(USER_ASSIGNING_ORG, userId, orgId);
 		return userMapper.toDTO(userRepository.save(user));
 	}
-	
+
 	public UserDTO unassignUserFromOrganization(Long userId) {
-		logger.info("un assign user: {}", userId);
-		UserEntity user = userMapper.toEntity(getUserById(userId));
-	    user.setOrganization(null);
-		logger.info("user after un assign : {}", user);
+		logger.info(USER_UNASSIGNED, userId);
+		UserEntity user = userRepository.findById(userId)
+				.orElseThrow(() -> new EntityNotFoundException(String.format(USER_NOT_FOUND, userId)));
+		user.setOrganization(null);
+		logger.info(USER_UNASSIGNED_LOG, user);
 		return userMapper.toDTO(userRepository.save(user));
 	}
-	
+
 	public void deleteUser(Long id) {
-		logger.info("check User with id :{}", id);
-		UserEntity user = userMapper.toEntity(getUserById(id));
-		logger.info("user  deleted: {}", user);
-	    userRepository.deleteById(user.getId());
+		logger.info(USER_DELETION, id);
+		UserEntity user = userRepository.findById(id).orElseThrow(() ->
+				new EntityNotFoundException(String.format(USER_NOT_FOUND, id)));
+
+		logger.info(USER_DELETED, user);
+		userRepository.deleteById(user.getId());
 	}
 
 	public UserDTO getUserByEmail(String email){
-		return userRepository.
-				findByEmail(email).map(userMapper::toDTO)
-				.orElseThrow(() -> new  EntityNotFoundException(String.format(USER_WITH_EMAIL_NOT_FOUND, email)));
+		return userRepository.findByEmail(email)
+				.map(userMapper::toDTO)
+				.orElseThrow(() -> new EntityNotFoundException(String.format(EMAIL_NOT_FOUND, email)));
 	}
-
 
 	public void checkUserEmailExist(String email, Long userId){
-		UserEntity existingUser = userMapper.toEntity(getUserByEmail(email));
-		if (!existingUser.getId().equals(userId)) {
-			logger.warn("Email {} already exists.", email);
-			throw new IllegalArgumentException(USER_EMAIL_EXISTS);
+		Optional<UserEntity> existingUser = userRepository.findByEmail(email);
+		if (existingUser.isPresent() && !existingUser.get().getId().equals(userId)) {
+			logger.warn(EMAIL_EXISTS, email);
+			throw new IllegalArgumentException(EMAIL_EXISTS);
 		}
 	}
+
 	public OrganizationEntity getOrganizationById(Long orgId){
-        return organizationMapper.toEntity(organizationService.getOrganizationById(orgId));
+		return organizationMapper.toEntity(organizationService.getOrganizationById(orgId));
 	}
+
+	public UserEntity addOrganizationIfNotNull(Long userId, Long orgId){
+		UserEntity existingUser = userMapper.toEntity(getUserById(userId));
+		if (orgId != null) {
+			OrganizationEntity organization = getOrganizationById(orgId);
+			existingUser.setOrganization(organization);
+		} else {
+			existingUser.setOrganization(null);
+		}
+		return existingUser;
+	}
+
+	public void checkUserNameExist(UserDTO body, Long id) {
+		if (isNameTaken(body.getName(), id)) {
+			logger.warn("User name '{}' already exists.", body.getName());
+			throw new IllegalArgumentException(USER_NAME_EXISTS);
+		}
+	}
+
+	private boolean isNameTaken(String name, Long id) {
+		if (id == null) {
+			return userRepository.existsByName(name);
+		}
+		Optional<UserEntity> existingUser = userRepository.findById(id);
+        return existingUser.map(userEntity ->
+				!userEntity.getName().equals(name) &&
+						userRepository.existsByName(name)).orElseGet(() -> userRepository.existsByName(name));
+    }
+
 }

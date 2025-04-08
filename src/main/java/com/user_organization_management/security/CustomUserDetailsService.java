@@ -1,6 +1,7 @@
 package com.user_organization_management.security;
 
 import com.user_organization_management.entity.UserEntity;
+import com.user_organization_management.exception.BadCredentialsAuthException;
 import com.user_organization_management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -21,9 +22,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity user = userRepository.findByName(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
+                .orElseThrow(() -> new BadCredentialsAuthException("username or password invalid"));
         if (user.getPassword() == null || user.getPassword().isEmpty()) {
-            throw new BadCredentialsException("Password is empty for user: " + username);
+            throw new BadCredentialsAuthException("username or password invalid");
         }
         return new User(
                 user.getName(),
