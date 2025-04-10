@@ -1,5 +1,6 @@
 package com.user_organization_management.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
@@ -28,6 +29,13 @@ public class UserDTO {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Long organizationId;
     private String organizationName;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Long roleId;
+    private String roleName;
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+    private Long failedCount;
+    private boolean locked;
 }

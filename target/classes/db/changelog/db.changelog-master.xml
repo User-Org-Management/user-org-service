@@ -3,57 +3,9 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="1" author="mtoaima">
-        <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="usersT"/>
-            </not>
-        </preConditions>
-        <createTable tableName="usersT">
-            <column name="id" type="SERIAL" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="username" type="VARCHAR(100)">
-                <constraints nullable="false" unique="true"/>
-            </column>
-            <column name="email" type="VARCHAR(255)">
-                <constraints nullable="false" unique="true"/>
-            </column>
-            <column name="password" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
-        <createTable tableName="organizationsT">
-            <column name="id" type="SERIAL" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="name" type="VARCHAR(255)">
-                <constraints nullable="false" unique="true"/>
-            </column>
-            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="2" author="mtoaima">
-        <preConditions onFail="MARK_RAN">
-            <tableExists tableName="usersT"/>
-        </preConditions>
-        <insert tableName="usersT">
-            <column name="username" value="admin"/>
-            <column name="email" value="admin@example.com"/>
-            <column name="password" value="securepassword"/>
-        </insert>
-    </changeSet>
-
-    <changeSet id="3" author="mtoaima">
-        <preConditions onFail="MARK_RAN">
-            <tableExists tableName="organizationsT"/>
-        </preConditions>
-        <insert tableName="organizationsT">
-            <column name="name" value="Default Organization"/>
-        </insert>
-    </changeSet>
+    <include file="db/changelog/001_create_roles_table.xml"/>
+    <include file="db/changelog/002_create_organizations_table.xml"/>
+    <include file="db/changelog/003_create_users_table.xml"/>
 </databaseChangeLog>

@@ -5,6 +5,7 @@ import java.util.List;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,8 @@ public class OrganizationController {
 	public ResponseEntity<OrganizationDTO> getOrganizationById(@PathVariable Long id) {
 		 return ResponseEntity.ok(organizationService.getOrganizationById(id));
 	}
-	
+
+	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ResponseEntity<OrganizationDTO> createOrganization(@RequestBody @Valid  OrganizationDTO organizationDTO) {
 		return ResponseEntity.ok(organizationService.createOrganization(organizationDTO));
