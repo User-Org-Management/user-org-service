@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.user_organization_management.service.UserServiceTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.671 s -- in com.user_organization_management.service.UserServiceTest
+Tests run: 15, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 3.142 s <<< FAILURE! -- in com.user_organization_management.service.UserServiceTest
+com.user_organization_management.service.UserServiceTest.updateUser_ShouldUpdateAndReturnUserDTO -- Time elapsed: 0.030 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.user_organization_management.repository.RoleRepository.findByName(String)" because "this.roleRepository" is null
+	at com.user_organization_management.service.UserService.updateUser(UserService.java:138)
+	at com.user_organization_management.service.UserServiceTest.updateUser_ShouldUpdateAndReturnUserDTO(UserServiceTest.java:163)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.user_organization_management.service.UserServiceTest.createUser_ShouldCreateAndReturnUserDTO -- Time elapsed: 0.013 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.user_organization_management.repository.RoleRepository.findByName(String)" because "this.roleRepository" is null
+	at com.user_organization_management.service.UserService.createUser(UserService.java:98)
+	at com.user_organization_management.service.UserServiceTest.createUser_ShouldCreateAndReturnUserDTO(UserServiceTest.java:125)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

@@ -94,6 +94,9 @@ public class UserService {
 			RoleEntity role = roleRepository.findById(userDTO.getRoleId())
 					.orElseThrow(() -> new EntityNotFoundException("Role not found"));
 			user.setRole(role);
+		}else{
+			RoleEntity defaultRole = roleRepository.findByName("USER").get();
+			user.setRole(defaultRole);
 		}
 
 		String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
@@ -130,6 +133,10 @@ public class UserService {
 			RoleEntity role = roleRepository.findById(userDTO.getRoleId())
 					.orElseThrow(() -> new EntityNotFoundException("Role not found"));
 			existingUser.setRole(role);
+		}
+		else{
+			RoleEntity defaultRole = roleRepository.findByName("USER").get();
+			existingUser.setRole(defaultRole);
 		}
 
 
@@ -225,8 +232,8 @@ public class UserService {
     }
 
 	@Transactional
-	public void increaseFailedLoginAttempts(String userName) {
-		UserEntity user = userMapper.toEntityWithSecurityFields(getUserByName(userName));
+	public void increaseFailedLoginAttempts(String email) {
+		UserEntity user = userMapper.toEntityWithSecurityFields(getUserByEmail(email));
 		long count = user.getFailedCount();
 		if (count >= 2) {
 			user.setLocked(true);
@@ -238,15 +245,15 @@ public class UserService {
 		userRepository.save(user);
 	}
 
-	public void disableLogin(String name){
-		UserEntity user = userMapper.toEntityWithSecurityFields(getUserByName(name));
+	public void disableLogin(String email){
+		UserEntity user = userMapper.toEntityWithSecurityFields(getUserByEmail(email));
 		if (user.isLocked() && user.getFailedCount() >= 3) {
 			throw new AccountLockedException("Account is Locked");
 		}
 	}
 
-	public void resetFailedLoginAttempts(String name)  {
-		UserEntity user = userMapper.toEntityWithSecurityFields(getUserByName(name));
+	public void resetFailedLoginAttempts(String email)  {
+		UserEntity user = userMapper.toEntityWithSecurityFields(getUserByEmail(email));
 			user.setFailedCount(0L);
 		}
 }

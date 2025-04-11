@@ -28,20 +28,20 @@ public class CustomUserDetailsService implements UserDetailsService {
     private UserMapper userMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String username){
-            UserEntity user = userMapper.toEntity(userService.getUserByName(username));
+    public UserDetails loadUserByUsername(String email){
+            UserEntity user = userMapper.toEntity(userService.getUserByEmail(email));
             if (user.getPassword() == null || user.getPassword().isEmpty()) {
-                throw new BadCredentialsAuthException("username or password invalid");
+                throw new BadCredentialsAuthException("email or password invalid");
             }
             String role = "ROLE_USER";
             if (user.getRole().getName() != null) {
                 role = "ROLE_" + user.getRole().getName();
             }
 
-            log.info("User {} has role {}", username, role);
+            log.info("User {} has role {}", email, role);
 
             return new User(
-                    user.getName(),
+                    user.getEmail(),
                     user.getPassword(),
                     AuthorityUtils.createAuthorityList(role)
             );

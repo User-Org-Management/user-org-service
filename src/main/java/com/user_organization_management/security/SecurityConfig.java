@@ -35,15 +35,19 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtRequestFilter jwtRequestFilter) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
+        http
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/organizations/create").hasRole("ADMIN")
-                        .anyRequest().authenticated())
+                        .requestMatchers("/auth/**").permitAll() // Allow login without auth
+                        .requestMatchers("/organizations/create").hasRole("ADMIN") // Role-based access
+                        .anyRequest().authenticated() // All other endpoints require JWT
+                )
                 .exceptionHandling(exceptions -> exceptions
                         .accessDeniedHandler(customAccessDeniedHandler)
-                        .authenticationEntryPoint(authenticationEntryPoint))
-                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+                        .authenticationEntryPoint(authenticationEntryPoint)
+                )
+                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
+                .cors(cors -> cors.disable()); // Disable CORS (handled by Gateway)
 
         return http.build();
     }

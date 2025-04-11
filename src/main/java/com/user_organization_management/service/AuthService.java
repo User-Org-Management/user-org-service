@@ -35,18 +35,18 @@ public class AuthService {
 
     public Map<String, String> login(AuthRequest authRequest)  {
         try {
-            userService.disableLogin(authRequest.getUsername());
+            userService.disableLogin(authRequest.getEmail());
 
             Authentication authenticate = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                            authRequest.getUsername(),
+                            authRequest.getEmail(),
                             authRequest.getPassword()
                     )
             );
 
-            userService.resetFailedLoginAttempts(authRequest.getUsername());
+            userService.resetFailedLoginAttempts(authRequest.getEmail());
 
-            UserDetails userDetails = customUserDetailsService.loadUserByUsername(authRequest.getUsername());
+            UserDetails userDetails = customUserDetailsService.loadUserByUsername(authRequest.getEmail());
             String token = jwtUtil.generateToken(userDetails.getUsername());
 
             Map<String, String> response = new HashMap<>();
@@ -54,7 +54,7 @@ public class AuthService {
             return response;
 
         } catch (BadCredentialsException e) {
-            userService.increaseFailedLoginAttempts(authRequest.getUsername());
+            userService.increaseFailedLoginAttempts(authRequest.getEmail());
             throw new BadCredentialsException("Invalid username or password", e);
         }
     }}

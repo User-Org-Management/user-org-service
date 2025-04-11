@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-04-10T14:21:45+0200",
-    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.42.0.z20250331-1358, environment: Java 21.0.6 (Eclipse Adoptium)"
+    date = "2025-04-11T18:17:36+0200",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
@@ -27,13 +27,13 @@ public class UserMapperImpl implements UserMapper {
         userDTO.setOrganizationName( userOrganizationName( user ) );
         userDTO.setRoleId( userRoleId( user ) );
         userDTO.setRoleName( userRoleName( user ) );
-        userDTO.setEmail( user.getEmail() );
-        userDTO.setFailedCount( user.getFailedCount() );
         userDTO.setId( user.getId() );
-        userDTO.setLocked( user.isLocked() );
-        userDTO.setMobile( user.getMobile() );
         userDTO.setName( user.getName() );
+        userDTO.setEmail( user.getEmail() );
+        userDTO.setMobile( user.getMobile() );
         userDTO.setPassword( user.getPassword() );
+        userDTO.setFailedCount( user.getFailedCount() );
+        userDTO.setLocked( user.isLocked() );
 
         return userDTO;
     }
@@ -49,12 +49,12 @@ public class UserMapperImpl implements UserMapper {
         userEntity.setOrganization( userDTOToOrganizationEntity( userDTO ) );
         userEntity.setRole( userDTOToRoleEntity( userDTO ) );
         userEntity.setId( userDTO.getId() );
+        userEntity.setName( userDTO.getName() );
         userEntity.setEmail( userDTO.getEmail() );
+        userEntity.setMobile( userDTO.getMobile() );
+        userEntity.setPassword( userDTO.getPassword() );
         userEntity.setFailedCount( userDTO.getFailedCount() );
         userEntity.setLocked( userDTO.isLocked() );
-        userEntity.setMobile( userDTO.getMobile() );
-        userEntity.setName( userDTO.getName() );
-        userEntity.setPassword( userDTO.getPassword() );
 
         return userEntity;
     }
@@ -70,9 +70,9 @@ public class UserMapperImpl implements UserMapper {
         userEntity.setFailedCount( dto.getFailedCount() );
         userEntity.setLocked( dto.isLocked() );
         userEntity.setId( dto.getId() );
+        userEntity.setName( dto.getName() );
         userEntity.setEmail( dto.getEmail() );
         userEntity.setMobile( dto.getMobile() );
-        userEntity.setName( dto.getName() );
         userEntity.setPassword( dto.getPassword() );
 
         return userEntity;
