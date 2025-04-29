@@ -1,6 +1,6 @@
 package com.user_organization_management.controller;
 import com.user_organization_management.dto.UserDTO;
-import com.user_organization_management.security.AuthRequest;
+import com.user_organization_management.model.AuthRequest;
 import com.user_organization_management.security.CustomUserDetailsService;
 import com.user_organization_management.security.JwtUtil;
 import com.user_organization_management.service.AuthService;
@@ -39,6 +39,6 @@ public class AuthController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity<UserDTO> createUser(@RequestBody @Valid  UserDTO userDTO) {
-        return ResponseEntity.ok(userService.createUser(userDTO));
+        return ResponseEntity.ok(userService.create(userDTO));
     }
 }

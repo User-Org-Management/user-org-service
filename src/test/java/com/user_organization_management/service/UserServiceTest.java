@@ -3,10 +3,13 @@ package com.user_organization_management.service;
 import com.user_organization_management.dto.OrganizationDTO;
 import com.user_organization_management.dto.UserDTO;
 import com.user_organization_management.entity.OrganizationEntity;
+import com.user_organization_management.entity.RoleEntity;
 import com.user_organization_management.entity.UserEntity;
+import com.user_organization_management.exception.DuplicateRecordException;
 import com.user_organization_management.exception.EntityNotFoundException;
 import com.user_organization_management.mapper.OrganizationMapper;
 import com.user_organization_management.model.CustomPageResponse;
+import com.user_organization_management.repository.RoleRepository;
 import com.user_organization_management.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,11 +44,16 @@ class UserServiceTest {
     @Mock
     private PasswordEncoder passwordEncoder;
 
+    @Mock
+    private RoleRepository roleRepository;
+
+
     @InjectMocks
     private UserService userService;
 
     private UserEntity userEntity;
     private OrganizationEntity organizationEntity;
+    private RoleEntity  roleEntity ;
     private OrganizationDTO organizationDTO;
     private UserDTO userDTO = new UserDTO();
 
@@ -59,12 +67,17 @@ class UserServiceTest {
         organizationEntity.setId(1L);
         organizationEntity.setName("Test Org");
 
+        roleEntity = new RoleEntity();
+        roleEntity.setId(1L);
+        roleEntity.setName("USER");
+
         userDTO.setId(1L);
         userDTO.setName("Test User");
         userDTO.setEmail("test@example.com");
         userDTO.setMobile("1234567890");
         userDTO.setPassword("password");
         userDTO.setOrganizationId(1L);
+        userDTO.setRoleId(1L);
 
         userEntity = new UserEntity();
         userEntity.setId(1L);
@@ -73,6 +86,7 @@ class UserServiceTest {
         userEntity.setMobile("1234567890");
         userEntity.setPassword("encodedPassword");
         userEntity.setOrganization(organizationEntity);
+        userEntity.setRole(roleEntity);
     }
 
     @Test
@@ -121,8 +135,9 @@ class UserServiceTest {
         when(organizationMapper.toEntity(any(OrganizationDTO.class))).thenReturn(organizationEntity);
         when(passwordEncoder.encode(anyString())).thenReturn("encodedPassword");
         when(userRepository.save(any(UserEntity.class))).thenReturn(userEntity);
+        when(roleRepository.findById(1L)).thenReturn(Optional.of(roleEntity));
 
-        UserDTO result = userService.createUser(userDTO);
+        UserDTO result = userService.create(userDTO);
 
         assertNotNull(result);
         assertEquals(1L, result.getId());
@@ -137,9 +152,10 @@ class UserServiceTest {
     @Test
     void createUser_WhenEmailExists_ShouldThrowException() {
         userDTO.setId(null);
+        userDTO.setRoleId(null);
 
         when(userRepository.findByEmail(anyString())).thenReturn(Optional.of(userEntity));
-        assertThrows(IllegalArgumentException.class, () -> userService.createUser(userDTO));
+        assertThrows(DuplicateRecordException.class, () -> userService.create(userDTO));
         verify(userRepository).findByEmail("test@example.com");
         verify(userRepository, never()).save(any());
     }
@@ -152,15 +168,19 @@ class UserServiceTest {
         updateDTO.setMobile("9876543210");
         updateDTO.setOrganizationId(1L);
         updateDTO.setPassword("newPassword");
+        updateDTO.setRoleId(1L);
 
         when(userRepository.findById(1L)).thenReturn(Optional.of(userEntity));
         when(userRepository.findByEmail(anyString())).thenReturn(Optional.empty());
+        when(userRepository.save(any())).thenReturn(userEntity);
+
         when(organizationService.getOrganizationById(1L)).thenReturn(organizationDTO);
         when(organizationMapper.toEntity(any())).thenReturn(organizationEntity);
         when(passwordEncoder.encode(anyString())).thenReturn("newEncodedPassword");
-        when(userRepository.save(any())).thenReturn(userEntity);
 
-        UserDTO result = userService.updateUser(1L, updateDTO);
+        when(roleRepository.findById(1L)).thenReturn(Optional.of(roleEntity));
+
+        UserDTO result = userService.update(1L, updateDTO);
 
         verify(userRepository, times(2)).findById(1L);
         assertNotNull(result);
@@ -256,7 +276,7 @@ class UserServiceTest {
 
         when(userRepository.findByEmail("test@example.com")).thenReturn(Optional.of(anotherUser));
 
-        assertThrows(IllegalArgumentException.class,
+        assertThrows(DuplicateRecordException.class,
                 () -> userService.checkUserEmailExist("test@example.com", 1L));
 
         verify(userRepository).findByEmail("test@example.com");

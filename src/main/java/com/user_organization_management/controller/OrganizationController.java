@@ -6,7 +6,6 @@ import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import com.user_organization_management.dto.OrganizationDTO;
@@ -34,12 +33,12 @@ public class OrganizationController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ResponseEntity<OrganizationDTO> createOrganization(@RequestBody @Valid  OrganizationDTO organizationDTO) {
-		return ResponseEntity.ok(organizationService.createOrganization(organizationDTO));
+		return ResponseEntity.ok(organizationService.create(organizationDTO));
 	}
 
 	@RequestMapping(value = "/update/{id}" , method = RequestMethod.PUT)
 	public ResponseEntity<OrganizationDTO> updateOrganization(@PathVariable @Min(1) Long  id, @RequestBody @Valid  OrganizationDTO organizationDTO) {
-		return ResponseEntity.ok(organizationService.updateOrganization(id , organizationDTO));
+		return ResponseEntity.ok(organizationService.update(id , organizationDTO));
 	}
 
 	@RequestMapping(value = "/delete/{id}" , method = RequestMethod.DELETE)

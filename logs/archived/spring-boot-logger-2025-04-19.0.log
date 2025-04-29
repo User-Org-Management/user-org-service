@@ -1,0 +1,406 @@
+2025-04-19 00:39:30,164 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m32s352ms354µs600ns).
+2025-04-19 00:39:30,820 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:39:30,821 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:39:30,860 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:39:30,864 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:39:30,869 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:39:30,870 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:39:30,871 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:40:00,876 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:40:00,876 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:40:00,877 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:40:00,877 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:40:00,893 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:40:00,893 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:40:00,894 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:40:30,900 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:40:30,900 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:40:30,900 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:40:30,900 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:40:30,916 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:40:30,916 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:40:30,916 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:41:00,921 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:41:00,922 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:41:00,921 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:41:00,922 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:41:00,936 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:41:00,936 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:41:00,937 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:41:28,873 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2025-04-19 00:41:30,942 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:41:30,942 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:41:30,942 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:41:30,943 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:41:30,958 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:41:30,958 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:41:30,959 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:42:00,967 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:42:00,967 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:42:00,968 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:42:00,968 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:42:00,985 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:42:00,985 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:42:00,985 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:42:30,994 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:42:30,994 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:42:30,995 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:42:30,995 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:42:31,012 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:42:31,012 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:42:31,013 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:43:01,023 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:43:01,023 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:43:01,024 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:43:01,024 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:43:01,040 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:43:01,040 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:43:01,041 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:43:31,047 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:43:31,047 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:43:31,048 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:43:31,048 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:43:31,065 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:43:31,065 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:43:31,065 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:44:01,076 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:44:01,076 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:44:01,077 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:44:01,077 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:44:01,093 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:44:01,094 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:44:01,094 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:44:31,097 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:44:31,097 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:44:31,097 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:44:31,097 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:44:31,114 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:44:31,114 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:44:31,115 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:45:01,120 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:45:01,120 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:45:01,121 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:45:01,121 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:45:01,137 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:45:01,137 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:45:01,138 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:45:31,148 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:45:31,147 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:45:31,148 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:45:31,148 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:45:31,164 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:45:31,164 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:45:31,164 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:46:01,173 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:46:01,173 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:46:01,174 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:46:01,174 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:46:01,191 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:46:01,191 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:46:01,191 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:46:28,883 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2025-04-19 00:46:31,200 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:46:31,201 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:46:31,201 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:46:31,201 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:46:31,217 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:46:31,217 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:46:31,218 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:47:01,227 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:47:01,227 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:47:01,227 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:47:01,227 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:47:01,243 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:47:01,243 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:47:01,243 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:47:31,248 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:47:31,248 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:47:31,249 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:47:31,249 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:47:31,264 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:47:31,264 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:47:31,265 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:48:01,268 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:48:01,268 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:48:01,269 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:48:01,269 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:48:01,285 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:48:01,285 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:48:01,286 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:48:31,299 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:48:31,299 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:48:31,300 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:48:31,300 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:48:31,317 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:48:31,317 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:48:31,318 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:49:01,322 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:49:01,322 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:49:01,323 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:49:01,323 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:49:01,340 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:49:01,340 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:49:01,341 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:49:31,348 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:49:31,348 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:49:31,349 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:49:31,349 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:49:31,366 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:49:31,365 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:49:31,366 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:50:01,371 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:50:01,371 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:50:01,372 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:50:01,372 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:50:01,388 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:50:01,388 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:50:01,388 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:50:31,398 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:50:31,398 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:50:31,399 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:50:31,399 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:50:31,416 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:50:31,415 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:50:31,417 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:52:34,117 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m3s747ms612µs700ns).
+2025-04-19 00:52:35,175 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:52:35,176 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:52:35,184 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:52:35,185 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:52:35,187 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:52:35,193 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:52:35,196 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:53:02,644 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2025-04-19 00:53:05,189 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:53:05,189 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:53:05,204 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:53:05,204 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:53:05,204 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:53:05,205 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:53:05,220 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:53:35,210 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:53:35,211 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:53:35,225 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:53:35,226 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:53:35,227 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:53:35,227 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:53:35,243 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:54:05,232 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:54:05,232 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:54:05,247 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:54:05,247 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:54:05,249 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:54:05,249 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:54:05,264 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:54:35,254 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:54:35,255 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:54:35,269 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:54:35,270 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:54:35,271 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:54:35,271 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:54:35,286 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 00:55:05,275 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 00:55:05,275 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:55:05,290 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 00:55:05,290 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 00:55:05,292 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 00:55:05,292 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 00:55:05,307 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:27:13,593 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h32m27s792ms619µs900ns).
+2025-04-19 03:27:14,858 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:27:14,869 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:27:14,900 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:27:14,933 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:27:14,935 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:27:14,961 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:27:14,961 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:27:44,950 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:27:44,950 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:27:44,964 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:27:44,965 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:27:44,966 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:27:44,981 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:27:44,982 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:28:14,981 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:28:14,981 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:28:14,996 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:28:14,996 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:28:14,996 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:28:15,013 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:28:15,013 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:28:45,006 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:28:45,007 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:28:45,021 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:28:45,022 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:28:45,023 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:28:45,038 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:28:45,039 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:29:15,024 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:29:15,025 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:29:15,039 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:29:15,040 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:29:15,041 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:29:15,057 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:29:15,058 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:29:42,088 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2025-04-19 03:29:45,042 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:29:45,042 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:29:45,060 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:29:45,060 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:29:45,060 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:29:45,075 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:29:45,075 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:30:15,067 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:30:15,068 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:30:15,083 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:30:15,084 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:30:15,085 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:30:15,100 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:30:15,101 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:48:16,592 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m2s967ms137µs300ns).
+2025-04-19 03:48:18,051 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:48:18,058 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:48:18,061 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:48:18,062 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:48:18,071 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:48:18,072 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:48:18,072 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:48:48,083 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:48:48,083 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:48:48,084 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:48:48,084 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:48:48,099 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:48:48,099 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:48:48,099 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:49:18,112 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:49:18,112 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:49:18,112 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:49:18,112 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:49:18,129 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:49:18,129 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:49:18,129 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:49:48,139 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:49:48,139 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:49:48,140 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:49:48,140 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:49:48,155 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:49:48,155 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:49:48,156 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:50:18,161 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:50:18,161 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:50:18,161 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:50:18,161 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:50:18,177 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:50:18,177 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:50:18,177 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:50:48,179 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:50:48,179 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:50:48,179 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:50:48,179 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:50:48,195 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:50:48,195 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:50:48,196 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:51:18,202 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:51:18,202 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:51:18,202 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:51:18,202 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:51:18,218 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:51:18,218 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:51:18,219 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:51:48,234 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:51:48,234 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:51:48,234 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:51:48,235 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:51:48,251 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:51:48,251 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:51:48,251 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:52:15,047 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2025-04-19 03:52:18,264 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:52:18,264 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:52:18,265 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:52:18,265 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:52:18,281 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:52:18,281 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:52:18,281 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:52:48,282 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:52:48,282 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:52:48,282 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:52:48,282 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:52:48,299 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:52:48,299 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:52:48,299 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:53:18,312 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:53:18,312 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:53:18,312 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:53:18,312 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:53:18,328 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:53:18,328 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:53:18,328 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:53:48,338 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:53:48,338 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:53:48,339 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:53:48,339 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:53:48,354 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:53:48,354 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:53:48,354 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:54:18,367 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:54:18,367 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:54:18,367 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:54:18,367 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:54:18,384 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:54:18,384 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:54:18,384 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:54:48,392 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:54:48,392 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:54:48,392 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:54:48,392 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:54:48,409 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:54:48,409 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:54:48,409 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:55:18,411 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:55:18,411 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:55:18,411 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:55:18,411 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:55:18,427 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:55:18,427 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:55:18,427 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 03:55:48,438 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 03:55:48,438 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 03:55:48,438 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:55:48,438 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 03:55:48,454 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 03:55:48,454 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 03:55:48,454 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 04:04:19,155 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m32s415ms685µs900ns).
+2025-04-19 04:04:20,864 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 04:04:20,864 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 04:04:20,864 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 04:04:20,864 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 04:04:20,868 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 04:04:20,868 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 04:04:20,869 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 04:04:50,871 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] HTTP PUT http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888?status=UP&lastDirtyTimestamp=1744897969423
+2025-04-19 04:04:50,871 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] HTTP GET http://localhost:8761/eureka/apps/delta
+2025-04-19 04:04:50,871 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 04:04:50,871 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Accept=[application/json, application/*+json]
+2025-04-19 04:04:50,888 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Response 200 OK
+2025-04-19 04:04:50,888 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-HeartbeatExecutor-0] Response 200 OK
+2025-04-19 04:04:50,888 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-CacheRefreshExecutor-0] Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+2025-04-19 04:05:00,088 INFO o.s.c.n.e.s.EurekaServiceRegistry [SpringApplicationShutdownHook] Unregistering application USER-MANAGEMENT with eureka with status DOWN
+2025-04-19 04:05:00,090 INFO c.n.d.DiscoveryClient$3 [SpringApplicationShutdownHook] Saw local status change event StatusChangeEvent [timestamp=1745028300090, current=DOWN, previous=UP]
+2025-04-19 04:05:00,090 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_USER-MANAGEMENT/192.168.1.4:user-management:8888: registering service...
+2025-04-19 04:05:00,091 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-InstanceInfoReplicator-0] HTTP POST http://localhost:8761/eureka/apps/USER-MANAGEMENT
+2025-04-19 04:05:00,091 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-InstanceInfoReplicator-0] Accept=[application/json, application/*+json]
+2025-04-19 04:05:00,097 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-InstanceInfoReplicator-0] Writing [InstanceInfo [instanceId = 192.168.1.4:user-management:8888, appName = USER-MANAGEMENT, hostName = 192.168.1.4, status = DOWN, ipAddr = 192.168.1.4, port = 8888, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@2a8d513e] as "application/json"
+2025-04-19 04:05:00,114 DEBUG o.s.c.l.CompositeLog [DiscoveryClient-InstanceInfoReplicator-0] Response 204 NO_CONTENT
+2025-04-19 04:05:00,115 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_USER-MANAGEMENT/192.168.1.4:user-management:8888 - registration status: 204
+2025-04-19 04:05:00,163 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-19 04:05:00,179 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-04-19 04:05:00,191 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-04-19 04:05:00,192 INFO c.n.d.DiscoveryClient [SpringApplicationShutdownHook] Shutting down DiscoveryClient ...
+2025-04-19 04:05:03,278 INFO c.n.d.DiscoveryClient [SpringApplicationShutdownHook] Unregistering ...
+2025-04-19 04:05:03,280 DEBUG o.s.c.l.CompositeLog [SpringApplicationShutdownHook] HTTP DELETE http://localhost:8761/eureka/apps/USER-MANAGEMENT/192.168.1.4:user-management:8888
+2025-04-19 04:05:03,280 DEBUG o.s.c.l.CompositeLog [SpringApplicationShutdownHook] Accept=[application/json, application/*+json]
+2025-04-19 04:05:03,298 DEBUG o.s.c.l.CompositeLog [SpringApplicationShutdownHook] Response 200 OK
+2025-04-19 04:05:03,299 INFO c.n.d.DiscoveryClient [SpringApplicationShutdownHook] DiscoveryClient_USER-MANAGEMENT/192.168.1.4:user-management:8888 - deregister  status: 200
+2025-04-19 04:05:03,305 INFO c.n.d.DiscoveryClient [SpringApplicationShutdownHook] Completed shut down of DiscoveryClient

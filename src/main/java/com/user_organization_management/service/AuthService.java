@@ -1,6 +1,6 @@
 package com.user_organization_management.service;
 
-import com.user_organization_management.security.AuthRequest;
+import com.user_organization_management.model.AuthRequest;
 import com.user_organization_management.security.CustomUserDetailsService;
 import com.user_organization_management.security.JwtUtil;
 import lombok.extern.slf4j.Slf4j;

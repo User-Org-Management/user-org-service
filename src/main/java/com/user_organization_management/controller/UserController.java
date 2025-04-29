@@ -29,7 +29,7 @@ public class UserController {
 
 	@RequestMapping(value = "/{id}" , method = RequestMethod.GET)
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserById(id));
+        return ResponseEntity.ok(userService.findUserById(id));
     }
 
 
@@ -40,7 +40,7 @@ public class UserController {
 
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<UserDTO> updateUser(@PathVariable @Min(1) Long id, @RequestBody @Valid UserDTO userDTO) {
-		return ResponseEntity.ok(userService.updateUser(id, userDTO));
+		return ResponseEntity.ok(userService.update(id, userDTO));
 	}
 
 	@RequestMapping(value = "/{userId}/assign/{orgId}", method = RequestMethod.PUT)
